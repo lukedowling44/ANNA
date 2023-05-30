@@ -1,51 +1,180 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Escape Room</title>
+    <title>HAPPY BIRTHDAY! </title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
         body {
             font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #fc466b, #3f5efb);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            flex-direction: column;
+            position: relative;
+        }
+        h1 {
+            margin-bottom: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: white;
+            border: none;
+            color: #3f5efb;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+        button:hover {
+            color: white;
+            background-color: #fc466b;
+        }
+        #message {
+            margin-top: 20px;
+        }
+        .envelope {
+            width: 90vw;
+            max-width: 600px;
+            height: 80vh;
+            background: #fdfcfb;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            visibility: hidden;
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 5vh auto;
+            overflow-y: auto;
+        }
+        .birthday-heading {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            color: black;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .birthday-message {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.5em;
+            color: black;
+            text-align: justify;
+            width: 100%;
+        }
+        .meme {
+            position: absolute;
+            width: 10.5%;
+        }
+        /* Positioning of the memes */
+        .meme1 {
+            top: 0;
+            left: 0;
+        }
+        .meme2 {
+            top: 0;
+            right: 0;
+        }
+        .meme3 {
+            top: 20%;
+            left: 0;
+            padding-top: 8%;
+        }
+        .meme4 {
+            top: 20%;
+            right: 0;
+            padding-top: 8%;
+        }
+        .meme5 {
+            bottom: 20%;
+            left: 0;
+        }
+        .meme6 {
+            bottom: 20%;
+            right: 0;
+        }
+        .meme7 {
+            bottom: 0;
+            left: 0;
+        }
+        .meme8 {
+            bottom: 0;
+            right: 0;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Digital Escape Room!</h1>
-    <p id="question">Question 1: What's the magic word?</p>
-    <input id="answer" type="text">
-    <button onclick="checkAnswer()">Submit</button>
-    <p id="message"></p>
+    <img class="meme meme1" src="meme1.jpg" alt="Meme 1">
+    <img class="meme meme2" src="meme2.jpg" alt="Meme 2">
+    <img class="meme meme3" src="meme3.jpg" alt="Meme 3">
+    <img class="meme meme4" src="meme4.jpg" alt="Meme 4">
+    <img class="meme meme5" src="meme5.jpg" alt="Meme 5">
+    <img class="meme meme6" src="meme6.jpg" alt="Meme 6">
+    <img class="meme meme7" src="meme7.jpg" alt="Meme 7">
+    <img class="meme meme8" src="meme8.jpg" alt="Meme 8">
+
+    <div class="container">
+        <h1>HAPPY BIRTHDAY ANNA!</h1>
+        <p id="question">Question 1: What is our families lucky number?</p>
+        <input id="answer" type="text">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="message"></p>
+    </div>
+    <div class="envelope" id="envelope">
+        <p class="birthday-heading">Happy Birthday, Anna!</p>
+        <p class="birthday-message">Wishing you a fantastic day filled with happiness and a presents. Happy birthday! I can't believe I won't be there to celebrate your 16th birthday with you; I am sorry for missing it. I wish you nothing but the best and hope you have a wonderful day. Enjoy spending time with your friends, and remember to give me a call to let me know how your birthday unfolds. It has been quite weird living up here without seeing you, and I am missing you heaps, but I am overjoyed to hear that you are thriving up in Sydney. I am incredibly proud of the person you are becoming and your unwavering commitment to your studies, friends, and family. Embrace the adventures of being 16, and relish in the exciting years that lie ahead. Although I'm confident you won't need it, I wish you the best of luck on your driving test, and I'm certain you'll have no trouble getting your licence faster than I did. Happy Birthday, Anna! I love you, and I am eagerly looking forward to visiting you soon. Lots of love, your brother, Luke.</p>
+        <audio id="myAudio" src="happybday.mp3" type="audio/mpeg"></audio>
+    </div>
 
     <script>
         const questions = [
-            "What's the magic word?", 
-            "Name the color of the sky during a sunny day.", 
-            "What's the opposite of down?", 
-            "Which animal is known as man's best friend?", 
-            "What's the number after nine?", 
-            "Name a yellow fruit.", 
-            "What's the capital of France?", 
-            "What's the name of the ocean on the East Coast of the United States?", 
-            "What planet do we live on?", 
-            "What's the square root of 81?"
+            "What is our families lucky number?", 
+            "What is our families nickname?", 
+            "What do you get when you graph this in desmos:(x^{2}+y^{2}-1)^{3}=x^{2}y^{3} (copy and paste in)?", 
+            "What is your favourite pet?", 
+            "What does Lily love to do most?", 
+            "Who walks Lily the most?", 
+            "Favourite board game to play together?", 
+            "Who is your favourite person in the family?", 
+            "How old is dad (22, 45, 68, 93)?",
+            "How old are you (show to mum and dad) (16 or 18)"
+
         ];
-        const correctAnswers = ["unicorn", "blue", "up", "dog", "ten", "banana", "Paris", "Atlantic", "Earth", "9"];
+        const correctAnswers = ["4", "fitzling", "love heart", "lily", "walk", "mum", "monopoly", "luke", "93", "18"];
         let currentQuestion = 0;
+        const answerInput = document.getElementById("answer");
 
         function checkAnswer() {
-            const answer = document.getElementById("answer").value.toLowerCase();
+            const answer = answerInput.value.toLowerCase();
             const messageElement = document.getElementById("message");
             if (answer === correctAnswers[currentQuestion]) {
                 currentQuestion++;
                 if (currentQuestion === correctAnswers.length) {
-                    messageElement.innerHTML = "Congratulations! You've unlocked the message: Happy Birthday!";
+                    document.querySelector('.container').style.display = 'none';
+                    document.querySelector('#envelope').style.visibility = 'visible';
+                    document.querySelector('#myAudio').play();
                 } else {
                     document.getElementById("question").innerHTML = `Question ${currentQuestion + 1}: ${questions[currentQuestion]}`;
-                    document.getElementById("answer").value = "";
+                    answerInput.value = "";
                 }
             } else {
                 messageElement.innerHTML = "Try again!";
             }
         }
+
+        answerInput.addEventListener("keyup", function(event) {
+            if (event.key === 'Enter') {
+                checkAnswer();
+            }
+        });
     </script>
 </body>
 </html>
