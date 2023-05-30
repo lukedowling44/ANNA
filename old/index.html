@@ -2,17 +2,12 @@
 <html>
 <head>
     <title>HAPPY BIRTHDAY! </title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: #fc466b;
-            background-image: linear-gradient(to right, #fc466b, #3f5efb);
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #fc466b, #3f5efb);
             color: white;
             height: 100vh;
             display: flex;
@@ -22,59 +17,28 @@
             flex-direction: column;
             position: relative;
         }
-        
         h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
         }
-        
-        p {
-            font-size: 1.5em;
-        }
-
-        #question, #message {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-
-        .container {
-            text-align: center;
-            padding: 20px;
-        }
-
         input, button {
             padding: 10px;
             font-size: 20px;
             margin-top: 20px;
         }
-
-        input {
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
         button {
             background-color: white;
             border: none;
             color: #3f5efb;
             cursor: pointer;
             transition: all .3s ease;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 1em;
-            font-weight: bold;
         }
-
         button:hover {
             color: white;
             background-color: #fc466b;
         }
-
         #message {
-            color: yellow;
-            font-weight: bold;
+            margin-top: 20px;
         }
-
         .envelope {
             width: 90vw;
             max-width: 600px;
@@ -91,7 +55,6 @@
             margin: 5vh auto;
             overflow-y: auto;
         }
-
         .birthday-heading {
             font-family: 'Great Vibes', cursive;
             font-size: 3em;
@@ -100,7 +63,6 @@
             text-align: center;
             width: 100%;
         }
-
         .birthday-message {
             font-family: 'Great Vibes', cursive;
             font-size: 1.5em;
@@ -108,9 +70,57 @@
             text-align: justify;
             width: 100%;
         }
+        .meme {
+            position: absolute;
+            width: 10.5%;
+        }
+        /* Positioning of the memes */
+        .meme1 {
+            top: 0;
+            left: 0;
+        }
+        .meme2 {
+            top: 0;
+            right: 0;
+        }
+        .meme3 {
+            top: 20%;
+            left: 0;
+            padding-top: 8%;
+        }
+        .meme4 {
+            top: 20%;
+            right: 0;
+            padding-top: 8%;
+        }
+        .meme5 {
+            bottom: 20%;
+            left: 0;
+        }
+        .meme6 {
+            bottom: 20%;
+            right: 0;
+        }
+        .meme7 {
+            bottom: 0;
+            left: 0;
+        }
+        .meme8 {
+            bottom: 0;
+            right: 0;
+        }
     </style>
 </head>
 <body>
+    <img class="meme meme1" src="meme1.jpg" alt="Meme 1">
+    <img class="meme meme2" src="meme2.jpg" alt="Meme 2">
+    <img class="meme meme3" src="meme3.jpg" alt="Meme 3">
+    <img class="meme meme4" src="meme4.jpg" alt="Meme 4">
+    <img class="meme meme5" src="meme5.jpg" alt="Meme 5">
+    <img class="meme meme6" src="meme6.jpg" alt="Meme 6">
+    <img class="meme meme7" src="meme7.jpg" alt="Meme 7">
+    <img class="meme meme8" src="meme8.jpg" alt="Meme 8">
+
     <div class="container">
         <h1>HAPPY BIRTHDAY ANNA!</h1>
         <p id="question">Question 1: What is our families lucky number?</p>
@@ -118,10 +128,9 @@
         <button onclick="checkAnswer()">Submit</button>
         <p id="message"></p>
     </div>
-
     <div class="envelope" id="envelope">
         <p class="birthday-heading">Happy Birthday, Anna!</p>
-        <p class="birthday-message">Wishing you a fantastic day filled with happiness and a presents. Happy birthday! I can't believe I won't be there to celebrate your 16th birthday with you; I am sorry for missing it. I wish you nothing but the best and hope you have a wonderful day. Enjoy spending time with your friends, and remember to give me a call to let me know how your birthday unfolds. It has been quite weird living up here without seeing you, and I am missing you heaps, but I am overjoyed to hear that you are thriving up in Sydney. I am incredibly proud of the person you are becoming and your unwavering commitment to your studies, friends, and family. Embrace the adventures of being 16, and relish in the exciting years that lie ahead. Although I'm confident you won't need it, I wish you the best of luck on your driving test, and I'm certain you'll have no trouble getting your licence faster than I did. Happy Birthday, Anna! I love you, and I am eagerly looking forward to visiting you soon. Lots of love, your brother, Luke.</p> <!-- Continue with the rest of your message -->
+        <p class="birthday-message">Wishing you a fantastic day filled with happiness and a presents. Happy birthday! I can't believe I won't be there to celebrate your 16th birthday with you; I am sorry for missing it. I wish you nothing but the best and hope you have a wonderful day. Enjoy spending time with your friends, and remember to give me a call to let me know how your birthday unfolds. It has been quite weird living up here without seeing you, and I am missing you heaps, but I am overjoyed to hear that you are thriving up in Sydney. I am incredibly proud of the person you are becoming and your unwavering commitment to your studies, friends, and family. Embrace the adventures of being 16, and relish in the exciting years that lie ahead. Although I'm confident you won't need it, I wish you the best of luck on your driving test, and I'm certain you'll have no trouble getting your licence faster than I did. Happy Birthday, Anna! I love you, and I am eagerly looking forward to visiting you soon. Lots of love, your brother, Luke.</p>
         <audio id="myAudio" src="happybday.mp3" type="audio/mpeg"></audio>
     </div>
 
@@ -167,6 +176,5 @@
             }
         });
     </script>
-
 </body>
 </html>
