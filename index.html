@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Escape Room</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Digital Escape Room!</h1>
+    <p id="question">Question 1: What's the magic word?</p>
+    <input id="answer" type="text">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="message"></p>
+
+    <script>
+        const questions = [
+            "What's the magic word?", 
+            "Name the color of the sky during a sunny day.", 
+            "What's the opposite of down?", 
+            "Which animal is known as man's best friend?", 
+            "What's the number after nine?", 
+            "Name a yellow fruit.", 
+            "What's the capital of France?", 
+            "What's the name of the ocean on the East Coast of the United States?", 
+            "What planet do we live on?", 
+            "What's the square root of 81?"
+        ];
+        const correctAnswers = ["unicorn", "blue", "up", "dog", "ten", "banana", "Paris", "Atlantic", "Earth", "9"];
+        let currentQuestion = 0;
+
+        function checkAnswer() {
+            const answer = document.getElementById("answer").value.toLowerCase();
+            const messageElement = document.getElementById("message");
+            if (answer === correctAnswers[currentQuestion]) {
+                currentQuestion++;
+                if (currentQuestion === correctAnswers.length) {
+                    messageElement.innerHTML = "Congratulations! You've unlocked the message: Happy Birthday!";
+                } else {
+                    document.getElementById("question").innerHTML = `Question ${currentQuestion + 1}: ${questions[currentQuestion]}`;
+                    document.getElementById("answer").value = "";
+                }
+            } else {
+                messageElement.innerHTML = "Try again!";
+            }
+        }
+    </script>
+</body>
+</html>
